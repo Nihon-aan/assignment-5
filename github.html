@@ -1,31 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Daisy UI and Tailwind -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 
-<!-- font awesome -->
+    <!-- font awesome -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
 
-<!-- Geist font    font-family: "Geist", sans-serif;-->
+    <!-- Geist font    -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <title>Github Issue Tracker</title>
+
+    <!-- css file -->
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- fav Icon -->
+
     <link rel="shortcut icon" href="B13-A5-Github-Issue-Tracker/assets/github-logo.png" type="image/x-icon">
 </head>
-<body>
 
-    <h1>This ist header</h1>
+
+
+
+
+
+
+
+
+<body class="bg-[#F8FAFC] min-h-screen py-[78px] ">
     
+
+    <section class="login-section bg-white max-w-[520px] mx-auto  p-8 rounded-lg shadow-lg">
+        <div class="head text-center mb-6">
+            <div class="img-container w-full mx-auto flex justify-center mb-6">
+                <img src="B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
+            </div>
+
+            <h1 class="font-semibold text-[24px] mb-1 text-[#1F2937]">GitHub Issues Tracker</h1>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+
+
+
+
+
+        <div class="form ">
+            <fieldset class="fieldset border-none  rounded-box w-full">
+               
+
+                <label class="label text-[16px] font-medium text-[#1F2937] mb-2">Username</label>
+                <input type="text" class="input mb-[6px] text-[16px] w-full p-4 rounded-lg" placeholder="Enter Username" />
+                <small class="text-[#4A00FF] text-[14px] mb-4">Default&colon; admin</small>
+
+                <label class="label text-[16px]  font-medium text-[#1F2937] mb-2">Password</label>
+                <input type="password" class="input text-[16px] mb-[6px] w-full p-4 rounded-lg" placeholder="Enter Password" />
+                <small class="text-[#4A00FF] text-[14px]">Default&colon; admin123</small>
+
+                <button class="btn btn-primary border-none rounded-lg bg-[#4A00FF] my-6 p-4 font-semibold text-white leading-[16px] text-[16px]">Sign In</button>
+            </fieldset>
+        </div>
+
+
+        
+
+       <div class="flex items-center mb-6">
+  <div class="flex-grow border-t border-[#E4E4E7]"></div>
+  <span class="px-2  text-[#1F2937]">OR</span>
+  <div class="flex-grow border-t border-[#E4E4E7]"></div>
+</div>
+
+        <h1 class="text-center text-[14px] text-[#64748B] mb-2">Demo Credentials&colon;</h1>
+
+        <div class="text-center py-6 bg-[#F8FAFC] rounded-lg">
+            <p class="font-semibold text-[#1F2937]">Username&colon; <span class="font-[400]">admin</span></p>
+            <p class="font-semibold text-[#1F2937]">Password&colon; <span class="font-[400]">admin123</span></p>
+        </div>
+
+
+
+
+    </section>
+
+
+
 </body>
+
 </html>
