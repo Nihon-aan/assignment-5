@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Daisy UI and Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <!-- font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+    <!-- Geist font    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Github Issue Tracker</title>
+
+    <!-- css file -->
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- fav Icon -->
+
+    <link rel="shortcut icon" href="B13-A5-Github-Issue-Tracker/assets/github-logo.png" type="image/x-icon">
+    
+</head>
+<body class="bg-[#F8FAFC] min-h-screen">
+
+  <nav class="bg-white border-b border-[#E9E9E9] px-4 py-4 md:px-20 flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-[60px]">
+    <a href="#" class="flex items-center gap-1 text-2xl font-semibold text-[#1F2937]">
+      <img class="w-9" src="B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="GitHub logo">
+      GitHub Issues Tracker
+    </a>
+
+    <div class="flex gap-4">
+      <label class="input h-11 w-full md:w-[300px] rounded border-[#E4E4E7] gap-1">
+        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+        <input id="search" type="search" class="grow" placeholder="Search issues..." />
+      </label>
+
+      <button id="search-btn"
+        class="btn h-11 rounded border-none text-white font-semibold bg-[#4A00FF]">
+        <i class="fa-solid fa-plus"></i> New Issue
+      </button>
+    </div>
+  </nav>
+
+
+  <main class="max-w-[1100px] mx-auto">
+
+
+
+
+  <section class="options bg-white p-6   rounded-lg">
+    <button class="btn font-semibold text-[#64748B] w-[120px] h-[40px]">All</button>
+    <button class="btn font-semibold text-[#64748B] w-[120px] h-[40px]">Open</button>
+    <button class="btn font-semibold text-[#64748B] w-[120px] h-[40px]">Closed</button>
+  </section>
+
+  
+<section class=" items-container bg-white  mt-4  rounded-lg">
+
+
+<section class="status-section p-6 flex justify-between border-b-2 border-[#E4E4E7]">
+
+
+  <div class="left-status flex gap-2 items-center">
+
+
+    <div class="aperturer-logo h-[50px] w-[50px] flex justify-center items-center bg-[#ECE4FF] rounded-full"><img src="B13-A5-Github-Issue-Tracker/assets/Aperture.png" class="" alt=""></div>
+
+    <div class="issue-count">
+      <h2 class="font-semibold text-[20px] text[#1F2937]">50 Issues</h2>
+      <p class="text-[16px] text-[#64748B]">Track and manage your project issues</p>
+    </div>
+
+
+
+  </div>
+
+
+  <div class="right-status flex gap-4 items-center justify-center">
+
+    <div class="open-status flex justify-center items-center gap-2">
+      <div class="green-logo h-3 w-3 bg-[#00A96E] rounded-full">
+      </div>
+      <p>Open</p>
+         
+    </div>
+
+    <div class="closed-status flex justify-center items-center gap-2">
+      <div class="green-logo h-3 w-3 bg-[#A855F7] rounded-full">
+      </div>
+      <p>Closed</p>
+         
+    </div>
+ </div>
+
+    </section>
+
+   
+
+    <section class="cards-container p-6 bg-[#FBFBFB]">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias atque non voluptas, distinctio explicabo nam sequi quod qui. Iure assumenda ipsam numquam commodi natus blanditiis animi maxime sapiente iusto.</p>
+    </section>
+
+    
+    
+
+
+
+ 
+
+
+
+
+</section>
+
+
+
+  </main>
+
+
+</body>
+</html>

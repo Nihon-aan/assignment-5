@@ -24,11 +24,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <title>Github Issue Tracker</title>
+    <title>Github Issue Tracker | Login</title>
 
     <!-- css file -->
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">  
 
     <!-- fav Icon -->
 
@@ -65,14 +65,14 @@
                
 
                 <label class="label text-[16px] font-medium text-[#1F2937] mb-2">Username</label>
-                <input type="text" class="input mb-[6px] text-[16px] w-full p-4 rounded-lg" placeholder="Enter Username" />
+                <input id="username" type="text" class="input mb-[6px] text-[16px] w-full p-4 rounded-lg" placeholder="Enter Username" />
                 <small class="text-[#4A00FF] text-[14px] mb-4">Default&colon; admin</small>
 
                 <label class="label text-[16px]  font-medium text-[#1F2937] mb-2">Password</label>
-                <input type="password" class="input text-[16px] mb-[6px] w-full p-4 rounded-lg" placeholder="Enter Password" />
+                <input id="password" type="password" class="input text-[16px] mb-[6px] w-full p-4 rounded-lg" placeholder="Enter Password" />
                 <small class="text-[#4A00FF] text-[14px]">Default&colon; admin123</small>
 
-                <button class="btn btn-primary border-none rounded-lg bg-[#4A00FF] my-6 p-4 font-semibold text-white leading-[16px] text-[16px]">Sign In</button>
+                <button id="sign-up-btn" class="btn btn-primary border-none rounded-lg bg-[#4A00FF] my-6 p-4 font-semibold text-white leading-[16px] text-[16px]">Sign In</button>
             </fieldset>
         </div>
 
@@ -98,7 +98,7 @@
     </section>
 
 
-
+<script src="login.js"></script>
 </body>
 
 </html>
