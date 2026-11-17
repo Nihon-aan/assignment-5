@@ -9,13 +9,13 @@ const filterButtons = document.querySelectorAll('.options button');
 const optionsSelection = document.querySelector('.options');
 
 
-const loadpost = () => {
+const loadpost = (btnId) => {
 
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
 
     fetch(url)
         .then((response) => response.json())
-        .then((output) => showOutput(output));
+        .then((output) => showOutput(output, btnId  ));
 
 }
 
@@ -33,7 +33,7 @@ function setActiveButton(selectedBtn) {
     selectedBtn.classList.remove('bg-white', 'text-[#64748B]');
     selectedBtn.classList.add('btn-primary', 'text-white');
 
-    loadpost();
+    loadpost(selectedBtn.id);
 
 }
 
@@ -77,14 +77,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-function showOutput(outputs) {
+function showOutput(outputs, btnId) {
 
     const container = document.getElementById('cards-container');
     container.innerHTML = "";
 
 
 
-    const issueList = outputs.data;
+    let issueList = outputs.data;
+
+
+    if(btnId==='openBtn'){
+        issueList= issueList.filter((issue) =>issue.status.toLowerCase()==='open');
+    }
+
+    else if(btnId==='closedBtn'){
+        issueList= issueList.filter((issue)=> issue.status.toLowerCase()==='closed');
+    }
 
     issueList.forEach((issue) => {
 
@@ -166,6 +175,62 @@ if(issue.status.toLowerCase()==="closed"){
           </div>
         
         `;
+
+       cards.addEventListener('click', () => {
+  const modal = document.getElementById('issue_modal');
+  const modalContent = document.getElementById('modal-content');
+
+  // Status badge text & color
+  const isClosed = issue.status.toLowerCase() === 'closed';
+  const statusText = isClosed ? 'Closed' : 'Opened';
+  const statusBg = isClosed ? 'bg-[#A855F7]' : 'bg-[#00A96E]';
+
+  // Format date to DD/MM/YYYY
+  const formattedDate = issue.createdAt.split('T')[0].split('-').reverse().join('/');
+
+  modalContent.innerHTML = `
+    <h3 class="text-[24px] font-bold text-[#1F2937]">${issue.title}</h3>
+
+    <div class="flex flex-wrap items-center gap-2 text-[12px] text-[#64748B] mt-2 mb-4">
+      <span class="${statusBg} text-white font-medium p-2 rounded-full">${statusText}</span>
+      <span class=" bg-[#64748B] h-1 w-1 rounded-full"></span>
+      <span>Opened by ${issue.author}</span>
+      <span class=" bg-[#64748B] h-1 w-1 rounded-full"></span>
+      <span>${formattedDate}</span>
+    </div>
+
+    <div class="flex flex-wrap gap-1 mb-6">
+      ${buttonsHTML}
+    </div>
+
+    <p class="text-[16px] text-[#64748B] mb-6">${issue.description}</p>
+
+
+
+
+
+    <div class="bg-[#F8FAFC] p-4 rounded-lg flex items-center mb-6">
+      <div class="flex-1">
+        <p class="text-[16px] text-[#64748B] mb-1">Assignee:</p>
+        <p class="text-[16px] font-semibold text-[#1F2937]">${issue.assignee || 'Unassigned'}</p>
+      </div>
+      <div class="flex-1">
+        <p class="text-[16px] text-[#64748B] mb-1">Priority:</p>
+        <span class="px-4 py-1 rounded-full text-xs font-medium uppercase ${priorityStyle}">
+          ${issue.priority}
+        </span>
+      </div>
+    </div>
+
+    <div class="modal-action mt-0">
+      <form method="dialog">
+        <button class="btn bg-[#4A00FF] text-white border-none px-6">Close</button>
+      </form>
+    </div>
+  `;
+
+  modal.showModal();
+});
 
 
     container.appendChild(cards);
