@@ -97,6 +97,8 @@ function showOutput(outputs, btnId) {
         issueList= issueList.filter((issue)=> issue.status.toLowerCase()==='closed');
     }
 
+    document.getElementById('total-issues').innerText = `${issueList.length} Issues`;
+
     issueList.forEach((issue) => {
 
          const formattedDate = issue.createdAt.split('T')[0].split('-').reverse().join('/');
