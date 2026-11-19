@@ -7,6 +7,8 @@
 const allBtn = document.getElementById('allBtn');
 const filterButtons = document.querySelectorAll('.options button');
 const optionsSelection = document.querySelector('.options');
+const searchInput = document.getElementById('search');
+
 
 
 const loadpost = (btnId) => {
@@ -97,6 +99,9 @@ function showOutput(outputs, btnId) {
 
     issueList.forEach((issue) => {
 
+         const formattedDate = issue.createdAt.split('T')[0].split('-').reverse().join('/');
+
+
         let buttonsHTML = "";
         issue.labels.forEach((label) => {
 
@@ -171,7 +176,7 @@ if(issue.status.toLowerCase()==="closed"){
 
           <div class="author border-t border-[#E4E4E7] p-4">
             <p class="text-[12px] text-[#64748B] mb-2">${issue.author}</p>
-            <p class="text-[12px] text-[#64748B] mb-2">${issue.createdAt}</p>
+            <p class="text-[12px] text-[#64748B] mb-2">${formattedDate}</p>
           </div>
         
         `;
@@ -180,14 +185,13 @@ if(issue.status.toLowerCase()==="closed"){
   const modal = document.getElementById('issue_modal');
   const modalContent = document.getElementById('modal-content');
 
-  // Status badge text & color
+
   const isClosed = issue.status.toLowerCase() === 'closed';
   const statusText = isClosed ? 'Closed' : 'Opened';
   const statusBg = isClosed ? 'bg-[#A855F7]' : 'bg-[#00A96E]';
 
-  // Format date to DD/MM/YYYY
-  const formattedDate = issue.createdAt.split('T')[0].split('-').reverse().join('/');
 
+ 
   modalContent.innerHTML = `
     <h3 class="text-[24px] font-bold text-[#1F2937]">${issue.title}</h3>
 
@@ -246,6 +250,30 @@ if(issue.status.toLowerCase()==="closed"){
 
 
 
+
+function filterBySearch (){
+
+        const keyword = searchInput.value.trim();
+
+
+
+        if (keyword === '') {
+    loadpost('allBtn');
+    return;
+  }
+
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${keyword}`;
+
+        fetch(url)
+        .then(((response) => response.json()))
+        .then((output) => showOutput(output));
+
+
+        
+
+}
+
+searchInput.addEventListener('input', filterBySearch);
 
 
 
