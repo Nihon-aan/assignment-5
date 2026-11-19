@@ -63,7 +63,7 @@
 
 
 
-    <section class="options bg-white p-6   rounded-lg shadow-sm">
+    <section class="options bg-white p-6   rounded-lg shadow-sm flex flex-wrap justify-center md:justify-start gap-2">
       <button id="allBtn" class="btn bg-white font-semibold text-[#64748B] w-[120px] h-[40px]">All</button>
       <button id="openBtn" class="btn bg-white font-semibold text-[#64748B] w-[120px] h-[40px]">Open</button>
       <button id="closedBtn" class="btn bg-white font-semibold text-[#64748B] w-[120px] h-[40px]">Closed</button>
@@ -73,13 +73,18 @@
     <section class=" items-container bg-white  mt-4  rounded-lg">
 
 
+
+
+
+      
+
       <section class="status-section p-6 flex justify-between border-b-2 border-[#E4E4E7]">
 
 
         <div class="left-status flex gap-2 items-center">
 
 
-          <div class="aperturer-logo h-[50px] w-[50px] flex justify-center items-center bg-[#ECE4FF] rounded-full"><img
+          <div class="aperturer-logo h-[50px] w-[50px] shrink-0 flex justify-center items-center bg-[#ECE4FF] rounded-full"><img
               src="B13-A5-Github-Issue-Tracker/assets/Aperture.png" class="" alt=""></div>
 
           <div class="issue-count">
@@ -92,7 +97,7 @@
         </div>
 
 
-        <div class="right-status flex gap-4 items-center justify-center">
+        <div class="right-status flex flex-col md:flex-row gap-2 md:gap-4 items-start md:items-center justify-center shrink-0">
 
           <div class="open-status flex justify-center items-center gap-2">
             <div class="green-logo h-3 w-3 bg-[#00A96E] rounded-full">
@@ -104,7 +109,7 @@
           <div class="closed-status flex justify-center items-center gap-2">
             <div class="green-logo h-3 w-3 bg-[#A855F7] rounded-full">
             </div>
-            <p>Closed</p>
+            <p>Closed</p> 
 
           </div>
         </div>
