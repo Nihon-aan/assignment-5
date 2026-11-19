@@ -8,10 +8,14 @@ const allBtn = document.getElementById('allBtn');
 const filterButtons = document.querySelectorAll('.options button');
 const optionsSelection = document.querySelector('.options');
 const searchInput = document.getElementById('search');
+const loadingSpinner = document.getElementById('loading-spinner');
 
 
 
 const loadpost = (btnId) => {
+
+    document.getElementById('cards-container').innerHTML = '';
+  loadingSpinner.classList.remove('hidden');    
 
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
 
@@ -80,6 +84,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function showOutput(outputs, btnId) {
+
+    loadingSpinner.classList.add('hidden');
 
     const container = document.getElementById('cards-container');
     container.innerHTML = "";
@@ -263,6 +269,8 @@ function filterBySearch (){
     loadpost('allBtn');
     return;
   }
+
+  loadingSpinner.classList.add('hidden');
 
     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${keyword}`;
 
